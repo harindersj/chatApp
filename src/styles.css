@@ -1,0 +1,11 @@
+* {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+    sans-serif;
+  -ms-overflow-style: none;
+}
+.App {
+  text-align: center;
+}
+::-webkit-scrollbar {
+  display: none;
+}
