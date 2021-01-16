@@ -7,11 +7,10 @@ export const UserDetail = () => {
   return (
     <div className={classes.root}>
       <div className={classes.userDetail}>
-          <Avatar className={classes.avatarStyle} />
-        
+        <Avatar className={classes.avatarStyle} />
+
         <div className={classes.userName}>
-          <label>Name</label>
-          <label>Active</label>
+          <label className={classes.label}>Name</label>
         </div>
       </div>
       <div className={classes.setting}>
