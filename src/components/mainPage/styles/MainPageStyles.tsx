@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 export const MainPageStyles = makeStyles((theme) => ({
   root: {
     width: "90vw",
-    height: "90vh",
+    height: "95vh",
     display: "flex",
     background: "whitesmoke",
     overFlow: "hidden"
@@ -17,7 +17,7 @@ export const MainPageStyles = makeStyles((theme) => ({
     overFlow: "scroll"
   },
   rightBar: {
-    width: "68%",
+    width: "70%",
     margin: "1%",
     display: "flex",
     flexDirection: "column"

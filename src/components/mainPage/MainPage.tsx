@@ -1,5 +1,6 @@
 import { Paper } from "@material-ui/core";
 import React from "react";
+import { ChatBox } from "../chatBox";
 import { ChatRoom } from "../chatRoom/ChatRoom";
 import { UserDetail } from "../userDetail";
 import { MainPageStyles } from "./styles";
@@ -12,7 +13,9 @@ export const MainPage = () => {
         <UserDetail />
         <ChatRoom />
       </Paper>
-      <Paper className={classes.rightBar}></Paper>
+      <div className={classes.rightBar}>
+        <ChatBox />
+      </div>
     </Paper>
   );
 };
