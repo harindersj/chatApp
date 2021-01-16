@@ -19,15 +19,16 @@ export const ChatRoom = () => {
               <Button variant="contained" className={classes.singleChat}>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                   <Avatar style={{ background: "orange" }} />
-                  <label style={{ paddingTop: "0.3em" }}>Name</label>
+                  <label style={{ padding: "0.3em" }}>Name</label>
                 </div>
                 <Badge
                   badgeContent={4}
                   color="error"
-                  style={{ display: "flex", justifyContent: "center" }}
-                >
-                  <MailIcon />
-                </Badge>
+                  style={{
+                    display: "flex",
+                    justifyContent: "center"
+                  }}
+                ></Badge>
               </Button>
             );
           })}

@@ -25,22 +25,21 @@ export const chatRoomStyles = makeStyles((theme) => ({
   },
   inputField: {
     height: "60%",
-    width: "70%",
+    width: "100%",
     border: "none",
     background: "transparent",
     outline: "none",
     fontSize: "1em"
   },
   chatList: {
-    width: "80%",
+    width: "90%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center"
   },
   singleChat: {
-    margin: "0.5em 0",
-    height: "40%",
-    padding: "0 0.9em",
+    margin: "0.2em 0",
+    padding: "0.5em 0.9em",
     display: "flex",
     justifyContent: "space-between"
   }
