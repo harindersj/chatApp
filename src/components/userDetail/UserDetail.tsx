@@ -10,12 +10,20 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Tooltip
+  Tooltip,
 } from "@material-ui/core";
 export const UserDetail = () => {
   const classes = userDetailStyles();
   const [showMenu, setShowMenu] = useState(false);
   const [showAddDialog, setShowAddDialog] = useState(false);
+
+  const handleOpen = () => {
+    setShowAddDialog(true);
+  };
+
+  const handleClose = () => {
+    setShowAddDialog(false);
+  };
   return (
     <div className={classes.root}>
       <div className={classes.userDetail}>
@@ -36,14 +44,17 @@ export const UserDetail = () => {
             disableHoverListener
             title={
               <List component="nav" aria-label="main mailbox folders">
-                <ListItem button>
+                <ListItem
+                  button
+                  onClick={() => {
+                    handleOpen();
+                    setShowAddDialog(true);
+                  }}
+                >
                   <ListItemIcon>
                     <InboxIcon />
                   </ListItemIcon>
-                  <ListItemText
-                    primary="Add User"
-                    onClick={() => setShowAddDialog(true)}
-                  />
+                  <ListItemText primary="Add User" />
                 </ListItem>
                 <ListItem button>
                   <ListItemIcon>
@@ -60,7 +71,9 @@ export const UserDetail = () => {
           </Tooltip>
         </ClickAwayListener>
       </div>
-      {showAddDialog && <AddUserDialog />}
+      {showAddDialog && (
+        <AddUserDialog dialog onClose={handleClose} onOpen={handleOpen} />
+      )}
     </div>
   );
 };

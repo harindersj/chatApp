@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
 import {
   createStyles,
+  FormControl,
+  Grid,
+  Input,
+  InputAdornment,
+  InputLabel,
+  TextField,
   Theme,
   withStyles,
-  WithStyles
+  WithStyles,
 } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -13,19 +19,21 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
+import { IAddUserDialog } from "./interface";
+import { AccountCircle } from "@material-ui/icons";
 
 const styles = (theme: Theme) =>
   createStyles({
     root: {
       margin: 0,
-      padding: theme.spacing(2)
+      padding: theme.spacing(2),
     },
     closeButton: {
       position: "absolute",
       right: theme.spacing(1),
       top: theme.spacing(1),
-      color: theme.palette.grey[500]
-    }
+      color: theme.palette.grey[500],
+    },
   });
 
 export interface DialogTitleProps extends WithStyles<typeof styles> {
@@ -54,61 +62,48 @@ const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
 
 const DialogContent = withStyles((theme: Theme) => ({
   root: {
-    padding: theme.spacing(2)
-  }
+    padding: theme.spacing(2),
+  },
 }))(MuiDialogContent);
 
 const DialogActions = withStyles((theme: Theme) => ({
   root: {
     margin: 0,
-    padding: theme.spacing(1)
-  }
+    padding: theme.spacing(1),
+  },
 }))(MuiDialogActions);
 
-export const AddUserDialog = () => {
-  const [open, setOpen] = React.useState(true);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  useEffect(() => {
-    handleOpen();
-  }, []);
-
+export const AddUserDialog = (props: IAddUserDialog) => {
   return (
     <div>
       <Dialog
-        onClose={handleClose}
+        onClose={props.onClose}
         aria-labelledby="customized-dialog-title"
-        open={open}
+        open={props.dialog}
       >
-        <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
+        <DialogTitle id="customized-dialog-title" onClose={props.onClose}>
+          Add User
         </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </Typography>
-          <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
-            cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
-            dui. Donec ullamcorper nulla non metus auctor fringilla.
-          </Typography>
+          <FormControl>
+            <Typography variant="body1" component="label">
+              Enter Name
+            </Typography>
+            <TextField label="Enter Number" />
+            <Typography variant="caption" component="label">
+              Enter Number
+            </Typography>
+            <TextField label="Enter Number" />
+          </FormControl>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
-            Save changes
+          <Button
+            variant="contained"
+            autoFocus
+            onClick={props.onClose}
+            color="primary"
+          >
+            Save
           </Button>
         </DialogActions>
       </Dialog>
