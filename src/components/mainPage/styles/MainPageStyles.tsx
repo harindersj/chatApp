@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Theme } from "@material-ui/core";
 
-export const MainPageStyles = makeStyles((theme) => ({
+export const MainPageStyles = makeStyles((theme: Theme) => ({
   root: {
     width: "90vw",
     height: "95vh",

@@ -1,8 +1,6 @@
+import { makeStyles, Theme } from "@material-ui/core";
 
-import { makeStyles } from "@material-ui/core";
-import { FormatAlignJustifyTwoTone } from "@material-ui/icons";
-
-export const userChatStyles = makeStyles((theme) => ({
+export const userChatStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
     justifyContent: "space-between",
