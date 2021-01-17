@@ -2,7 +2,7 @@ import { IconButton, Paper } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import SendRoundedIcon from "@material-ui/icons/SendRounded";
 import React from "react";
-import { UserDetail } from "../userDetail";
+import { UserChatDetail } from "./UserChatDetail";
 import { chatRoomStyles } from "./styles";
 
 export const ChatBox = () => {
@@ -10,7 +10,7 @@ export const ChatBox = () => {
   return (
     <div className={classes.root}>
       <Paper className={classes.userData}>
-        <UserDetail />
+        <UserChatDetail />
       </Paper>
       <Paper className={classes.chatBox}>
         <div style={{ width: "100%" }}>

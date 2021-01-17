@@ -1,7 +1,7 @@
 import { Avatar, ClickAwayListener, IconButton } from "@material-ui/core";
 import React, { useState } from "react";
 import SettingsIcon from "@material-ui/icons/Settings";
-import { userDetailStyles } from "./styles/userDetailsStyles";
+import { userChatStyles } from "./styles/userChatStyles";
 import { ContextMenu } from "../contextMenu";
 import InboxIcon from "@material-ui/icons/Inbox";
 import DraftsIcon from "@material-ui/icons/Drafts";
@@ -12,8 +12,8 @@ import {
   ListItemText,
   Tooltip
 } from "@material-ui/core";
-export const UserDetail = () => {
-  const classes = userDetailStyles();
+export const UserChatDetail = () => {
+  const classes = userChatStyles();
   const [showMenu, setShowMenu] = useState(false);
   return (
     <div className={classes.root}>
@@ -40,7 +40,7 @@ export const UserDetail = () => {
                   <ListItemIcon>
                     <InboxIcon />
                   </ListItemIcon>
-                  <ListItemText primary="Add User" />
+                  <ListItemText primary="Inbox" />
                 </ListItem>
                 <ListItem button>
                   <ListItemIcon>
