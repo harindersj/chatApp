@@ -29,6 +29,7 @@ export const userDetailStyles = makeStyles((theme) => ({
     flexDirection: "column"
   },
   setting: {
+    marginLeft: "auto",
     display: "flex",
     justifyContent: "center",
     alignItems: "center"

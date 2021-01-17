@@ -2,7 +2,6 @@ import { Avatar, ClickAwayListener, IconButton } from "@material-ui/core";
 import React, { useState } from "react";
 import SettingsIcon from "@material-ui/icons/Settings";
 import { userChatStyles } from "./styles/userChatStyles";
-import { ContextMenu } from "../contextMenu";
 import InboxIcon from "@material-ui/icons/Inbox";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import {

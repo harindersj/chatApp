@@ -2,9 +2,9 @@ import { Avatar, ClickAwayListener, IconButton } from "@material-ui/core";
 import React, { useState } from "react";
 import SettingsIcon from "@material-ui/icons/Settings";
 import { userDetailStyles } from "./styles/userDetailsStyles";
-import { ContextMenu } from "../contextMenu";
 import InboxIcon from "@material-ui/icons/Inbox";
 import DraftsIcon from "@material-ui/icons/Drafts";
+import { AddUserDialog } from "./AddUserDialog";
 import {
   List,
   ListItem,
@@ -15,6 +15,7 @@ import {
 export const UserDetail = () => {
   const classes = userDetailStyles();
   const [showMenu, setShowMenu] = useState(false);
+  const [showAddDialog, setShowAddDialog] = useState(false);
   return (
     <div className={classes.root}>
       <div className={classes.userDetail}>
@@ -33,14 +34,16 @@ export const UserDetail = () => {
             // style={{ marginLeft: "-60px" }}
             disableFocusListener
             disableHoverListener
-            disableTouchListener
             title={
               <List component="nav" aria-label="main mailbox folders">
                 <ListItem button>
                   <ListItemIcon>
                     <InboxIcon />
                   </ListItemIcon>
-                  <ListItemText primary="Add User" />
+                  <ListItemText
+                    primary="Add User"
+                    onClick={() => setShowAddDialog(true)}
+                  />
                 </ListItem>
                 <ListItem button>
                   <ListItemIcon>
@@ -57,6 +60,7 @@ export const UserDetail = () => {
           </Tooltip>
         </ClickAwayListener>
       </div>
+      {showAddDialog && <AddUserDialog />}
     </div>
   );
 };

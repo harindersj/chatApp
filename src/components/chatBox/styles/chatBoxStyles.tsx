@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Theme } from "@material-ui/core";
 
-export const chatRoomStyles = makeStyles((theme) => ({
+export const chatRoomStyles = makeStyles({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -23,7 +23,6 @@ export const chatRoomStyles = makeStyles((theme) => ({
     height: "auto",
     margin: "10px",
     background: "lightgray",
-    textJustify: "inner-word"
   },
   sendMessage: {
     margin: "auto",
@@ -39,8 +38,7 @@ export const chatRoomStyles = makeStyles((theme) => ({
     width: "1.6em",
     height: "1.6em",
     margin: "auto",
-    boxShadow: theme.shadows[2]
-  },
+    },
   inputField: {
     height: "80%",
     width: "100%",
@@ -51,6 +49,5 @@ export const chatRoomStyles = makeStyles((theme) => ({
     outline: "none",
     borderRadius: "50px",
     fontSize: "1em",
-    boxShadow: theme.shadows[1]
-  }
-}));
+    },
+});
